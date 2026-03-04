@@ -1,14 +1,15 @@
 import { Card } from "flowbite-react";
+import { Link } from "react-router-dom";
 
-export default function CardComp() {
+export default function CardComp({ item }) {
     return (
         <Card
             className="max-w-sm"
             imgAlt="Meaningful alt text for an image that is not purely decorative"
-            imgSrc="https://i.pinimg.com/736x/7e/12/c7/7e12c76a6f8208d7f3d86de28797c609.jpg"
+            imgSrc={item.image}
         >
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                SHAW
+                <Link to={`/categories/${item.id}`}>{item.name}</Link>
             </h5>
         </Card>
     )
